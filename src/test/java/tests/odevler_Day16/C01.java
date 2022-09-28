@@ -1,4 +1,4 @@
-package tests.odevler_Day16;
+package tests.odevler_day16;
 
 public class C01 {
 
