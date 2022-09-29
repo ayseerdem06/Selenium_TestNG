@@ -1,4 +1,4 @@
-package tests.odevler_day17;
+package tests.odevler.odevler_day17;
 
 public class C02 {
 /*

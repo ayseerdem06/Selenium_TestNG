@@ -9,6 +9,8 @@ public class AmazonPage {
 
     public AmazonPage(){ //Constructor oluşturup public yapmamız gerekir
         PageFactory.initElements(Driver.getDriver(),this);
+        //this-> Driver class'indaki Driver.getDriver() 'i , Page class'indaki driver'a  esitledi/ilişkilendirdi /tanitti.
+
 
     }
 
