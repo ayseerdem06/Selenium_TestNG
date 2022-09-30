@@ -7,16 +7,17 @@ import utilities.Driver;
 
 public class AmazonPage {
 
-    public AmazonPage(){ //Constructor oluşturup public yapmamız gerekir
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AmazonPage() { //Constructor oluşturup public yapmamız gerekir
+        PageFactory.initElements(Driver.getDriver(), this);
         //this-> Driver class'indaki Driver.getDriver() 'i , Page class'indaki driver'a  esitledi/ilişkilendirdi /tanitti.
 
 
     }
 
-    @FindBy (id="twotabsearchtextbox")
+
+    @FindBy(id = "twotabsearchtextbox")
     public WebElement aramaKutusu;
 
-    @FindBy (xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
+    @FindBy(xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
     public WebElement aramaSonucWE;
 }
