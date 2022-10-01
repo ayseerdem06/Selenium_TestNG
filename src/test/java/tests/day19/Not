@@ -14,3 +14,11 @@
 
 // POM'da artik inheritance yerine object ve static kullanarak methodlara ulasiyoruz
 // page classina objeyle driver classina static ile ulasiriz
+
+
+" POM da Driver class'ındaki getDriver()'ın obje oluşturularak kullanılmasını engellemek için
+Singleton Pattern kullanımı benimsenmiştir. Singleton Pattern : Tekli kullanım demekdir. Bir class'a
+farklı Class lardan obje oluşturularak  ulaşmayı engellemek için kullanılır. Bunu sağlamak için
+yapmamız gereken şey oldukça basit , obje oluşturmak için kullanılan constructor'ı private yaptığımızda
+başka class'larda Driver class'ından  obje oluşturulması mümkün olamaz. Driver class'ı sadece static
+yöntemle kullanılsın diye bu şekilde uygulanır."

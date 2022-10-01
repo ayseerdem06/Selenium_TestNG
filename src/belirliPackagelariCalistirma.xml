@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="istenen packageleri calistirma">
+    <test name="package">
+        <packages>
+            <package name="tests.day17_DependsOnMeth_Hard_SoftAssert"/>
+        </packages>
+    </test>
+    <test name="baska Test">
+        <classes>
+            <class name="tests.day19.C02_NegatifTest"/>
+        </classes>
+    </test>
+</suite>
