@@ -1,4 +1,4 @@
-package tests.tekrarDersleri.day18;
+package tests.day18Tekrar;
 
 import org.testng.annotations.Test;
 import utilities.ConfigReader;

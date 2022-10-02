@@ -15,7 +15,7 @@ ona göre .xml formatını yazmamız gerekir.
         <classes>
             <class name="tests.day16_Priority_DepensOnMeth.C03_Priority"/>
             <class name="tests.day17_DependsOnMeth_Hard_SoftAssert.C03_SoftAssert"/>
-        </classes>
+           </classes>
     </test>
 
 

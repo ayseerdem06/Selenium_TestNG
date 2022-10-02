@@ -1,4 +1,4 @@
-package tests.tekrarDersleri.day17_pom;
+package tests.day17Tekrar_pom;
 
 import com.github.javafaker.Faker;
 import org.testng.Assert;

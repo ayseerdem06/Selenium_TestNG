@@ -2,12 +2,13 @@
 <suite name="istenen packageleri calistirma">
     <test name="package">
         <packages>
-            <package name="tests.day17_DependsOnMeth_Hard_SoftAssert"/>
+            <package name="tests.day18_Configuration"/>
         </packages>
     </test>
-    <test name="baska Test">
+    <test name="class">
         <classes>
             <class name="tests.day19.C02_NegatifTest"/>
+            <class name="tests.day19Tekrar_smokeTest.C02_NegatifLoginTest"/>
         </classes>
     </test>
 </suite>

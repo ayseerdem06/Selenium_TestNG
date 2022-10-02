@@ -1,4 +1,4 @@
-package tests.tekrarDersleri.day17_pom;
+package tests.day17Tekrar_pom;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
