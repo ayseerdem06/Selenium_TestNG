@@ -1,4 +1,4 @@
-package tests.odevler.odevler_day17;
+package tests.odevler;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Driver;
 
-public class C01_DependsOnTest {
+public class C17_Odev2 {
 
     /*
     Bir class oluşturun: DependsOnTest

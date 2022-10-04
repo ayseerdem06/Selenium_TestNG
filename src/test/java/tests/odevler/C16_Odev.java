@@ -1,13 +1,11 @@
-package tests.odevler.odevler_day16;
+package tests.odevler;
 
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.YouTubePage;
 import utilities.Driver;
 
-public class C01 {
+public class C16_Odev {
 
       /*
     1) Bir class oluşturun: YoutubeAssertions

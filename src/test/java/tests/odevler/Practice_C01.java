@@ -1,6 +1,6 @@
-package tests.odevler.practice_odev;
+package tests.odevler;
 
-public class C01 {
+public class Practice_C01 {
 
 
 //     * Navigate to  https://www.saucedemo.com/

@@ -1,6 +1,6 @@
-package tests.odevler.odevler_day17;
+package tests.odevler;
 
-public class C02 {
+public class C17_Odev {
 /*
     Yeni bir Class Olusturun : C03_SoftAssert
     “http://zero.webappsecurity.com/” Adresine gidin
