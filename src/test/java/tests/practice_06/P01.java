@@ -1,4 +1,4 @@
-package tests.practice.practice_06;
+package tests.practice_06;
 
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
