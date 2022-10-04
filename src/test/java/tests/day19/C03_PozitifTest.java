@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class C03_PozitifTest {
 
-    @Test
+    @Test (groups = "gp2")
     public void test01() throws IOException {
 
         //https://www.hotelmycamp.com/ adresine git  login butonuna bas
@@ -31,6 +31,7 @@ public class C03_PozitifTest {
                 .sendKeys(Keys.ENTER).perform();
         //Degerleri girildiginde sayfaya basarili sekilde girilebildigini test et
         Assert.assertTrue(hmcPage.girisYapildi.isDisplayed());
+        Driver.closeDriver();
 
     }
 

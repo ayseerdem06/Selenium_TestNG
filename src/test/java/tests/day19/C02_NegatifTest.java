@@ -36,7 +36,7 @@ public class C02_NegatifTest {
         actions.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("hmcWrongPass"))
                 .sendKeys(Keys.ENTER).perform();
         Assert.assertTrue(hmcPage.girisYapilamadi.isDisplayed());
-
+        Driver.closeDriver();
 
 
     }

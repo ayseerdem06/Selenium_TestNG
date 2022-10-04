@@ -11,5 +11,6 @@ public class C01_ConfigReader {
 
         Driver.getDriver().get(ConfigReader.getProperty("amznUrl"));
         Driver.getDriver().get(ConfigReader.getProperty("faceUrl"));
+        Driver.closeDriver();
     }
 }

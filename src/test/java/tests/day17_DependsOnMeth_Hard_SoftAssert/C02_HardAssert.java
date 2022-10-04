@@ -5,12 +5,13 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utilities.Driver;
 import utilities.TestBaseBeforeMethodAfterMethod;
 
 public class C02_HardAssert extends TestBaseBeforeMethodAfterMethod {
 
 
-    @Test
+    @Test  (groups = "gp1")
     public void test01() {
         //1-amazon anasayfaya gidin
         driver.get("https://amazon.com");
@@ -31,5 +32,6 @@ public class C02_HardAssert extends TestBaseBeforeMethodAfterMethod {
 
         //6-arama sonucunun Nutella içerdigini test edin
         Assert.assertTrue(sonuc.getText().contains("Nutella"));
+        Driver.closeDriver();
     }
 }

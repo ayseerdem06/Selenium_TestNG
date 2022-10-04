@@ -15,7 +15,7 @@ public abstract class TestBaseBeforeClassAfterClass {
 
     protected static WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass (groups = "gp1")
     public static void setup(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -24,7 +24,7 @@ public abstract class TestBaseBeforeClassAfterClass {
 
     }
 
-    @AfterClass
+    @AfterClass (groups = "gp1")
     public static void tearDown(){
         driver.quit();
     }
