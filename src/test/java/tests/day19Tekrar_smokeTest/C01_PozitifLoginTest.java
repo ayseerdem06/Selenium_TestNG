@@ -21,7 +21,7 @@ public class C01_PozitifLoginTest {
         // test data user email: customer@bluerentalcars.com
         brcpPage.emailTexBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
 
-        // test data passeord: 12345
+        // test data password: 12345
         brcpPage.passwordTexBox.sendKeys(ConfigReader.getProperty("brcValidPassword"));
 
         // login butonuna tıklayın
