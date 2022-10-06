@@ -53,7 +53,6 @@ public class C01_RaporluTest extends TestBaseRapor {
 
         // degerler girildiğinde sayfaya başarılı bir  şekilde girildiğini test edelim
         System.out.println(brcpPage.kullaniciProfilIsmi.getText());
-
         String actulaUserName = brcpPage.kullaniciProfilIsmi.getText();
         String expectedUserName = "John Walker";
         Assert.assertEquals(expectedUserName, actulaUserName);

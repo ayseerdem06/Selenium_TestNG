@@ -15,10 +15,11 @@ public class C02_HardAssert extends TestBaseCross {
     @Test
     public void test01() {
         //1-amazon anasayfaya gidin
-        driver.get("https://amazon.com");
+       driver.get("https://amazon.com");
 
         //2-title in Amazon içerdigini test edin
         Assert.assertTrue(driver.getTitle().contains("Amazon"));
+        Driver.getDriver().navigate().refresh();
 
         //3-arama kutusnun erişilebilir oldugunu tets edin
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
