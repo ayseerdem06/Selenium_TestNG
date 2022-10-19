@@ -144,7 +144,7 @@ public class TC01 {
         productsPages.cosmeticsCheckBox.click();
 
      //  Kullanici Catagries sekmesinden urun katagorisi olarak Fashion&Clothing seceneginin oldugunu dogrular
-        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         Thread.sleep(1000);
         String expectedFashionClothing="Fashion&Clothing";
         Thread.sleep(1000);
@@ -157,11 +157,37 @@ public class TC01 {
         productsPages.fashionClothingCheckBox.click();
 
 
-        //  Kullanici Catagries sekmesinden urun katagorisi olarak Toys & Games seceneginin oldugunu dogrular
-     //  Kullanici Catagries sekmesinden urun katagorisi olarak Toys & Games secenegini secer
-     //  Kullanici Catagries sekmesinden urun katagorisi olarak New Arrivals seceneginin oldugunu dogrular
+    //  Kullanici Catagries sekmesinden urun katagorisi olarak Toys & Games seceneginin oldugunu dogrular
+        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
+        Thread.sleep(1000);
+        String expectedtoysGames="Toys & Games";
+        Thread.sleep(1000);
+        String actualtoysGames=productsPages.toysGamestext.getText();
+        Thread.sleep(1000);
+        Assert.assertEquals(expectedtoysGames,actualtoysGames);
+
+        //  Kullanici Catagries sekmesinden urun katagorisi olarak Toys & Games secenegini secer
+        Thread.sleep(1000);
+        productsPages.toysGamesCheckBox.click();
+
+
+        //  Kullanici Catagries sekmesinden urun katagorisi olarak New Arrivals seceneginin oldugunu dogrular
+        actions.sendKeys(Keys.PAGE_UP).perform();
+        Thread.sleep(1000);
+        String expectedNewArrivals="New Arrivals";
+        Thread.sleep(1000);
+        String actualNewArrivals=productsPages.newArrivalstext.getText();
+        Thread.sleep(1000);
+        Assert.assertEquals(expectedtoysGames,actualtoysGames);
+
      //  Kullanici Catagries sekmesinden urun katagorisi olarak New Arrivals  secenegini secer
+
+        Thread.sleep(1000);
+        productsPages.newArrivalsCheckBox.click();
+
      //  Kullanici sayfayi kapatir
+
+
 
     }
 }

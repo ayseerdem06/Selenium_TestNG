@@ -95,6 +95,21 @@ public class ProductsPages {
     @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[32]")
     public WebElement fashionClothingCheckBox;
 
+    @FindBy(xpath = "(//*[text()='Toys & Games'])[2]")
+    public WebElement toysGamestext;
+
+    @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[93]")
+    public WebElement toysGamesCheckBox;
+
+
+    @FindBy(xpath = "(//*[text()='New Arrivals'])[1]")
+    public WebElement newArrivalstext;
+
+
+    @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[80]")
+    public WebElement newArrivalsCheckBox;
+
+
 
 
 
