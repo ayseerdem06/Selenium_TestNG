@@ -33,14 +33,37 @@ public class ProductsPages {
     @FindBy(xpath = "//a[text()='My Account']")
     public WebElement myAccount;
 
+    @FindBy(xpath = "//h2[@class='page-title']")
+    public WebElement myAccountText;
 
     @FindBy(xpath = "//a[@href='https://pearlymarket.com/store-manager/']")
     public WebElement storeManager;
+
+    @FindBy(xpath = "//h2[@class='page-title']")
+    public WebElement storeManagerText;
+
 
     // Products sekmesi icin
 
     @FindBy(xpath = "//div[@class='wcfm_menu_items wcfm_menu_wcfm-products']")
     public WebElement products;
+
+    @FindBy(xpath = "//span[@class='wcfm-page-heading-text']")
+    public WebElement productsText;
+
+    @FindBy(xpath = "(//th[@class='sorting_disabled'])[3]")
+    public WebElement status;
+
+    @FindBy(xpath = "(//th[@class='sorting_disabled'])[4]")
+    public WebElement stok;
+
+    @FindBy(xpath = "(//*[@class='sorting'])[2]")
+    public WebElement price;
+
+    @FindBy(xpath = "(//*[@class='sorting'])[4]")
+    public WebElement date;
+
+
 
     @FindBy(xpath = "//span[text()='Add New']")
     public WebElement addNew;
