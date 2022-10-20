@@ -37,11 +37,15 @@ public class ProductsPages {
     @FindBy(xpath = "//a[@href='https://pearlymarket.com/store-manager/']")
     public WebElement storeManager;
 
+    // Products sekmesi icin
+
     @FindBy(xpath = "//div[@class='wcfm_menu_items wcfm_menu_wcfm-products']")
     public WebElement products;
 
     @FindBy(xpath = "//span[text()='Add New']")
     public WebElement addNew;
+
+    //Categories CheckBox kutusu icin
 
     @FindBy(xpath = "(//*[text()='Categories'])[1]")
     public WebElement categories;
@@ -98,7 +102,7 @@ public class ProductsPages {
     @FindBy(xpath = "(//*[text()='Toys & Games'])[2]")
     public WebElement toysGamestext;
 
-    @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[93]")
+    @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[94]")
     public WebElement toysGamesCheckBox;
 
 
@@ -106,8 +110,61 @@ public class ProductsPages {
     public WebElement newArrivalstext;
 
 
-    @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[80]")
+    @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[81]")
     public WebElement newArrivalsCheckBox;
+
+    // Pruducst Brands ChechkBox Kutusu için
+
+    @FindBy(xpath = "(//*[text()='Product brands'])[1]")
+    public WebElement pruductBrands;
+
+
+    @FindBy(xpath = "//li[@class='product_cats_checklist_item checklist_item_35']")
+    public WebElement elegantAutoGroupText;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[10]")
+    public WebElement elegantAutoGroupCheckBox;
+
+
+    @FindBy(xpath = "//li[@class='product_cats_checklist_item checklist_item_41']")
+    public WebElement greenGrassText;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[14]")
+    public WebElement greenGrassCheckBox;
+
+    @FindBy(xpath = "//*[@class='product_cats_checklist_item checklist_item_46']")
+    public WebElement nodeJsText;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[34]")
+    public WebElement nodeJsCheckBox;
+
+    @FindBy(xpath = "//*[@class='product_cats_checklist_item checklist_item_47']")
+    public WebElement nS8Text;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[36]")
+    public WebElement nS8CheckBox;
+
+    @FindBy(xpath = "//*[@class='product_cats_checklist_item checklist_item_50']")
+    public WebElement redText;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[49]")
+    public WebElement redCheckBox;
+
+    @FindBy(xpath = "//*[@class='product_cats_checklist_item checklist_item_52']")
+    public WebElement skysuiteTechText;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[57]")
+    public WebElement skysuiteTechCheckBox;
+
+
+    @FindBy(xpath = "//*[@class='product_cats_checklist_item checklist_item_55']")
+    public WebElement sterlingText;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[59]")
+    public WebElement sterlingCheckBox;
+
+
+
 
 
 

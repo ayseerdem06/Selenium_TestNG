@@ -31,8 +31,9 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
     //========ScreenShot Web Element(Bir webelementin resmini alma)=====//
-    public static String getScreenshotWebElement(String name,WebElement element) throws IOException {
+    public static String getScreenshotWebElement(String name, WebElement element) throws IOException {
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         // TakesScreenshot is an interface of selenium that takes the screenshot
         File source = element.getScreenshotAs(OutputType.FILE);
@@ -41,8 +42,9 @@ public class ReusableMethods {
         File finalDestination = new File(wElementSS);
         // save the screenshot to the path given
         FileUtils.copyFile(source, finalDestination);
-        return  wElementSS;
+        return wElementSS;
     }
+
     //========Switching Window(Pencereler arası geçiş)=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
@@ -54,11 +56,13 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     //========Hover Over(Elementin üzerinde beklemek)=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).perform();
     }
+
     //==========Return a list of string given a list of Web Element====////
     public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
@@ -69,6 +73,7 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
+
     //========Returns the Text of the element given an element locator==//
     public static List<String> getElementsText(By locator) {
         List<WebElement> elems = Driver.getDriver().findElements(locator);
@@ -80,6 +85,7 @@ public class ReusableMethods {
         }
         return elemTexts;
     }
+
     //   HARD WAIT WITH THREAD.SLEEP
 //   waitFor(5);  => waits for 5 second
     public static void waitFor(int sec) {
@@ -89,23 +95,28 @@ public class ReusableMethods {
             e.printStackTrace();
         }
     }
+
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -116,6 +127,7 @@ public class ReusableMethods {
             }
         }
     }
+
     public static void waitForPageToLoad(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
@@ -129,6 +141,19 @@ public class ReusableMethods {
         } catch (Throwable error) {
             System.out.println(
                     "Timeout waiting for Page Load Request to complete after " + timeout + " seconds");
+        }
+    }
+
+
+    //====== js ======//
+    public static void jsclick(WebElement webElement) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", webElement);
+        try {
+            webElement.click();
+        } catch (Exception e) {
+            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+            executor.executeScript("arguments[0].click();", webElement);
         }
     }
 }
