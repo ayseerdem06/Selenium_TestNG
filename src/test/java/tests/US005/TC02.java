@@ -1,6 +1,5 @@
 package tests.US005;
 
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,10 +8,10 @@ import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
 
-public class TC01 {
+public class TC02 {
 
     @Test
-    public void testcase01() throws InterruptedException {
+    public void testCase02() throws InterruptedException {
 
         ProductsPages productsPages = new ProductsPages();
         Actions actions = new Actions(Driver.getDriver());
@@ -30,50 +29,55 @@ public class TC01 {
         String expectedUrl = "https://pearlymarket.com/";
         Assert.assertEquals(expectedUrl, Driver.getDriver().getCurrentUrl());
 
-
         //  Kullanici ana sayfada My Account linkine tiklar
-        //  Kullanici My Account'a giris yaptigini dogrular
         Thread.sleep(2000);
         actions.sendKeys(Keys.END).perform();
         Thread.sleep(2000);
         productsPages.myAccount.click();
-        WebElement actualAccountText = productsPages.myAccountText;
-        Assert.assertTrue(actualAccountText.isDisplayed());
-
 
         //  Kullanici acilan sayfada Store Manager linkine  tiklar
-        //  Kullanici Store Manager'a giris yaptigini dogrular
         Thread.sleep(1000);
         productsPages.storeManager.click();
-        WebElement actualStoreManager = productsPages.storeManagerText;
-        Assert.assertTrue(actualStoreManager.isDisplayed());
 
         //  Kullanici  acilan sayfada Products linkine  tiklar
-        //  Kullanici Products 'a giris yaptigini dogrular
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         Thread.sleep(1000);
         productsPages.products.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        WebElement actualProductsText = productsPages.productsText;
-        Assert.assertTrue(actualProductsText.isDisplayed());
 
-        //  Kullanici Prpducts sayfasinda urun listesinin yer aldigi tabloda
-        //  status, stok, price ve date baslıklarının oldugunu dogrular
+        //  Kullanici Products ekranından Yeni urun ekle (Add new) butonuna tiklar
         Thread.sleep(1000);
-        WebElement actualStatus = productsPages.status;
-        Assert.assertTrue(actualStatus.isDisplayed());
-
-        WebElement actualStok = productsPages.stok;
-        Assert.assertTrue(actualStok.isDisplayed());
-
-        WebElement actualPrice = productsPages.price;
-        Assert.assertTrue(actualPrice.isDisplayed());
-
-        WebElement actualDate = productsPages.date;
-        Assert.assertTrue(actualDate.isDisplayed());
+        productsPages.addNew.click();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
 
-        //  Kullanici sayfayi kapatir
+      // Kullanici Products'ta Add New ekranına  girdigini  dogrular
+        WebElement actualAddProduct= productsPages.addProduct;
+        Assert.assertTrue(actualAddProduct.isDisplayed());
+        Assert.assertTrue(actualAddProduct.getText().contains("Add Product"));
+
+
+      // Kullanici acilan Add Product ekranında Urun icin virtual ve  downloadable seceneklerinin oldugunu dogrular
+        WebElement actualVirtual=productsPages.virtual;
+        Assert.assertTrue(actualVirtual.isDisplayed());
+        Assert.assertTrue(actualVirtual.getText().contains("Virtual"));
+
+        WebElement actualdownloadable=productsPages.downloadable;
+        Assert.assertTrue(actualdownloadable.isDisplayed());
+        Assert.assertTrue(actualdownloadable.getText().contains("Downloadable"));
+
+
+      // Kullanici Add Product ekranında virtual  ve downloadable seceneklerinin  secilebiliyor oldugunu  dogrular
+        WebElement actualVirtualCheckBox=productsPages.virtualCheckBox;
+        Assert.assertTrue(actualVirtualCheckBox.isEnabled());
+        productsPages.virtualCheckBox.click();
+
+        WebElement actualDownloadableCheckBox=productsPages.downloadableCheckBox;
+        Assert.assertTrue(actualDownloadableCheckBox.isEnabled());
+        productsPages.downloadableCheckBox.click();
+
+
+      // Kullanici sayfayi kapatir
         Thread.sleep(3000);
         Driver.closeDriver();
 

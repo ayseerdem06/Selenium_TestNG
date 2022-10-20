@@ -63,10 +63,31 @@ public class ProductsPages {
     @FindBy(xpath = "(//*[@class='sorting'])[4]")
     public WebElement date;
 
-
+  // Add New Ekrani
 
     @FindBy(xpath = "//span[text()='Add New']")
     public WebElement addNew;
+
+    @FindBy(xpath = "//*[text()='Add Product']")
+    public WebElement addProduct;
+
+    @FindBy(xpath = "//p[text()='Virtual']")
+    public WebElement virtual;
+
+    @FindBy(xpath = "//input[@id='is_virtual']")
+    public WebElement virtualCheckBox;
+
+    @FindBy(xpath = "//p[text()='Downloadable']")
+    public WebElement downloadable;
+
+    @FindBy(xpath = "//input[@id='is_downloadable']")
+    public WebElement downloadableCheckBox;
+
+
+
+
+
+
 
     //Categories CheckBox kutusu icin
 
