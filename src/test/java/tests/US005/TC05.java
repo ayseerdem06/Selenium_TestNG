@@ -78,24 +78,21 @@ public class TC05 {
         productsPages.mediaLibraryIkinci.click();
 
         //   Kullanici acilan pencerede eklemek istedigi resmi secer
-        Thread.sleep(2000);
-        productsPages.imgClick2.click();
+         productsPages.imgClick2.click();
 
         //   Kullanici sectigi resmi eklemek icin Add To Galery butonuna tiklar olusturur
         productsPages.addToGallery.click();
 
      //  Kullanici Catagries sekmesinden herhangi bir katagori secer
         productsPages.bestSellerCheckBox.click();
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
 
        //  Kullanici Product brands sekmesinden brands katagorisini bos birakir
 
      //  Kullanici Submit Butonuna  Tiklar
-        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.jsclick(productsPages.submit);
 
      //  Kullanici "Product Successfully Published."mesajı ile Price ve Sale Price girisi ve  Product brands katagorisi seçmeden   urun eklendigini dogrular
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),8);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
         wait.until(ExpectedConditions.visibilityOf(productsPages.popUpMessageHappy));
         Assert.assertTrue(productsPages.popUpMessageHappy.isDisplayed());
 

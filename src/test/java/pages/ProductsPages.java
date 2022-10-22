@@ -134,11 +134,9 @@ public class ProductsPages {
     @FindBy (xpath = "//*[contains(text(), 'Product Successfully Published.')]")
     public WebElement popUpMessageHappy;
 
-    @FindBy (xpath = "//*[contains(text(),'Please insert Product Title before submit.\n" +
-            "Featured img: This field is required.\n" +
-            "Gallery Images: This field is required.\n" +
-            "Product cat: This field is required.')]")
+    @FindBy (xpath = "//*[@class='wcicon-status-cancelled']")
     public WebElement popUpMessageNegative;
+
 
     @FindBy(xpath = "(//*[text()='Short Description'])[1]")
     public WebElement shortDescription;

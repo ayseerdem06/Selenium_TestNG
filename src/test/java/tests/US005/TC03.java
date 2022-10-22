@@ -102,7 +102,7 @@ public class TC03 {
         Assert.assertTrue(productsPages.categories.isDisplayed());
         Assert.assertTrue(productsPages.categories.getText().contains("Categories*"));
         productsPages.bestSellerCheckBox.click();
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
+
 
         //   Kullanici Product brands sekmesinin oldugunu dogrular
         //   Kullanici Product brands sekmesinden herhangi bir brands secer
@@ -113,12 +113,10 @@ public class TC03 {
 
 
         //   Kullanici Submit Butonuna  Tiklar
-        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.jsclick(productsPages.submit);
 
         //   Kullanici "Product Successfully Published."mesajı ile istenilen bilgileri girdiginde Submit  yapabildigini dogrular
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),8);
-        wait.until(ExpectedConditions.visibilityOf(productsPages.popUpMessageHappy));
+        ReusableMethods.waitForVisibility(productsPages.popUpMessageHappy,10);
         Assert.assertTrue(productsPages.popUpMessageHappy.isDisplayed());
 
         //   Kullanici sayfayi kapatir

@@ -7,12 +7,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class TC02 {
+public class TC02 extends TestBaseRapor {
 
     @Test
     public void testCase02() throws InterruptedException {
 
+        extentTest = extentReports.createTest("virtual veya downloadable secenegini seçebilmeli","Store Manager olarak Products  menusunden  urun icin virtual veya downloadable secenegini gormeli  ve bu senecekleri secmeli");
         ProductsPages productsPages = new ProductsPages();
         Actions actions = new Actions(Driver.getDriver());
 
@@ -75,6 +77,7 @@ public class TC02 {
         WebElement actualDownloadableCheckBox=productsPages.downloadableCheckBox;
         Assert.assertTrue(actualDownloadableCheckBox.isEnabled());
         productsPages.downloadableCheckBox.click();
+        extentTest.info("Store Manager olarak Products  menusunden  urun icin virtual veya downloadable seceneklerini gorur  ve bu senecekleri secer");
 
 
       // Kullanici sayfayi kapatir

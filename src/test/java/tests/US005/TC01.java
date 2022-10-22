@@ -1,6 +1,7 @@
 package tests.US005;
 
 
+import com.aventstack.extentreports.ExtentReports;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +16,7 @@ public class TC01 extends TestBaseRapor {
     @Test
     public void testcase01() throws InterruptedException {
 
+        extentTest = extentReports.createTest("Yeni Urunler yukleyebilmeli","Store Manager olarak, Products a gidip   status, stock, price, date den olusan urun listesini gorebilmeli");
         ProductsPages productsPages = new ProductsPages();
         Actions actions = new Actions(Driver.getDriver());
 
@@ -72,7 +74,7 @@ public class TC01 extends TestBaseRapor {
 
         WebElement actualDate = productsPages.date;
         Assert.assertTrue(actualDate.isDisplayed());
-
+        extentTest.info("Store Manager olarak Products  menusunden   status, stock, price, date den olusan urun listesine ait basliklarin oldugunu gorur");
 
         //  Kullanici sayfayi kapatir
         Thread.sleep(3000);

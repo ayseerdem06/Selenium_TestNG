@@ -59,7 +59,6 @@ public class TC04 {
         //  Kullanici Product brands sekmesini bos birakir
 
         //  Kullanici Submit Butonuna  Tiklar
-        actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.jsclick(productsPages.submit);
 
         //  Kullanici "Please insert Product Title before submit." mesaji ile product title eklemeden submit yapamadigini dogrular
