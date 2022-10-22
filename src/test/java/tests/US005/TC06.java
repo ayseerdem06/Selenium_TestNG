@@ -1,5 +1,6 @@
 package tests.US005;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,10 +9,13 @@ import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
 
-public class TC02 {
+import java.util.ArrayList;
+import java.util.List;
+
+public class TC06 {
 
     @Test
-    public void testCase02() throws InterruptedException {
+    public void testCase06() throws InterruptedException {
 
         ProductsPages productsPages = new ProductsPages();
         Actions actions = new Actions(Driver.getDriver());
@@ -22,12 +26,9 @@ public class TC02 {
         productsPages.singIn.click();
 
         //  Kullanici gecerli  bir email , sifre  girer ve Sing İn Butonuna tiklar
-        //  Kullanici ana sayafaya basarili bir sekilde giris yaptigini dogrular
         productsPages.username.sendKeys("kubraesra27@hotmail.com");
         productsPages.password.sendKeys("Esrakubra2!");
         productsPages.signInButton.click();
-        String expectedUrl = "https://pearlymarket.com/";
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedUrl));
 
         //  Kullanici ana sayfada My Account linkine tiklar
         Thread.sleep(2000);
@@ -50,34 +51,29 @@ public class TC02 {
         productsPages.addNew.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
-
-      // Kullanici Products'ta Add New ekranına  girdigini  dogrular
-        WebElement actualAddProduct= productsPages.addProduct;
-        Assert.assertTrue(actualAddProduct.isDisplayed());
-        Assert.assertTrue(actualAddProduct.getText().contains("Add Product"));
+        //   Kullanici kisa tanımlama (short description)secenegini  gorur
+        Assert.assertTrue(productsPages.shortDescription.isDisplayed());
+        Assert.assertTrue(productsPages.shortDescription.getText().contains("Short Description"));
 
 
-      // Kullanici acilan Add Product ekranında Urun icin virtual ve  downloadable seceneklerinin oldugunu dogrular
-        WebElement actualVirtual=productsPages.virtual;
-        Assert.assertTrue(actualVirtual.isDisplayed());
-        Assert.assertTrue(actualVirtual.getText().contains("Virtual"));
+        //   Kullanici short description secenegine  kisa aciklama girer
+        Driver.getDriver().switchTo().frame(productsPages.iframe.get(0));
+        productsPages.shortDescriptionBox.get(0).click();
+        productsPages.shortDescriptionBox.get(0).sendKeys("Takim birlikteligi basarinin sirridir.");
+        Thread.sleep(3000);
+        Driver.getDriver().switchTo().parentFrame();
 
-        WebElement actualdownloadable=productsPages.downloadable;
-        Assert.assertTrue(actualdownloadable.isDisplayed());
-        Assert.assertTrue(actualdownloadable.getText().contains("Downloadable"));
+        //   Kullanici genis tanimlama (Description) secenegini gorur
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        Assert.assertTrue(productsPages.description.isDisplayed());
+        Assert.assertTrue(productsPages.description.getText().contains("Description"));
 
+        //   Kullanici  Description secenegine uzun aciklama girer
+        Driver.getDriver().switchTo().frame(productsPages.iframe.get(1));
+        productsPages.shortDescriptionBox.get(0).click();
+        productsPages.shortDescriptionBox.get(0).sendKeys("Proje12 Ekibi ve Team8 ile biz bu basariyi yakaladik. Herşey Cok Guzel olacak :))");
 
-      // Kullanici Add Product ekranında virtual  ve downloadable seceneklerinin  secilebiliyor oldugunu  dogrular
-        WebElement actualVirtualCheckBox=productsPages.virtualCheckBox;
-        Assert.assertTrue(actualVirtualCheckBox.isEnabled());
-        productsPages.virtualCheckBox.click();
-
-        WebElement actualDownloadableCheckBox=productsPages.downloadableCheckBox;
-        Assert.assertTrue(actualDownloadableCheckBox.isEnabled());
-        productsPages.downloadableCheckBox.click();
-
-
-      // Kullanici sayfayi kapatir
+        //   Kullanici sayfayi kapatir
         Thread.sleep(3000);
         Driver.closeDriver();
 

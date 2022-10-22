@@ -1,10 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductsPages {
@@ -83,9 +85,72 @@ public class ProductsPages {
     @FindBy(xpath = "//input[@id='is_downloadable']")
     public WebElement downloadableCheckBox;
 
+    @FindBy(xpath = "//input[@id='pro_title']")
+    public WebElement productTitle;
+
+    @FindBy(xpath = "(//*[text()='Price ($)'])[1]")
+    public WebElement price$;
+
+    @FindBy(xpath = "//input[@id='regular_price']")
+    public WebElement priceSearchBox;
+
+    @FindBy(xpath = "//*[text()='Sale Price ($)']")
+    public WebElement salePrice$;
+
+    @FindBy(xpath = "//input[@id='sale_price']")
+    public WebElement salePriceSearchBox;
+
+    @FindBy(xpath = "//img[@id='featured_img_display']")
+    public WebElement featuredImg;
+
+    @FindBy(xpath = "//button[@id='menu-item-browse']")
+    public WebElement mediaLibraryIlk;
+
+    @FindBy(xpath = "(//*[@class='thumbnail'])[1]")
+    public WebElement imgClick1;
+
+    @FindBy(xpath = "//*[@class='button media-button button-primary button-large media-button-select']")
+    public WebElement select;
+
+    @FindBy(xpath = "//img[@id='gallery_img_gimage_0_display']")
+    public WebElement galeryImg;
+
+    @FindBy(xpath = "(//button[@id='menu-item-browse'])[2]")
+    public WebElement mediaLibraryIkinci;
+
+    @FindBy(xpath = "(//*[@class='thumbnail'])[5]")
+    public WebElement imgClick2;
+
+    @FindBy(xpath = "(//button[text()='Add to Gallery'])[2]")
+    public WebElement addToGallery;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_brand '])[2]")
+    public WebElement adidasCheckBox;
 
 
+    @FindBy(xpath = "//input[@id='wcfm_products_simple_submit_button']")
+    public WebElement submit;
 
+    @FindBy (xpath = "//*[contains(text(), 'Product Successfully Published.')]")
+    public WebElement popUpMessageHappy;
+
+    @FindBy (xpath = "//*[contains(text(),'Please insert Product Title before submit.\n" +
+            "Featured img: This field is required.\n" +
+            "Gallery Images: This field is required.\n" +
+            "Product cat: This field is required.')]")
+    public WebElement popUpMessageNegative;
+
+    @FindBy(xpath = "(//*[text()='Short Description'])[1]")
+    public WebElement shortDescription;
+
+    @FindBy(xpath = "//iframe")
+    public List<WebElement> iframe;
+
+    @FindBy(xpath = "(//*[@id='tinymce'])[1]")
+    public List<WebElement> shortDescriptionBox;
+
+    @FindBy(xpath = "(//*[text()='Description'])[1]")
+    public WebElement description;
 
 
 
@@ -96,6 +161,9 @@ public class ProductsPages {
 
     @FindBy(xpath = "//*[text()='Besin takviyeleri']")
     public WebElement besinTakviyeleriText;
+
+    @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[10]")
+    public WebElement bestSellerCheckBox;
 
     @FindBy(xpath = "(//input[@class='wcfm-checkbox checklist_type_product_cat '])[9]")
     public WebElement besinTakviyeleriCheckBox;
@@ -156,6 +224,11 @@ public class ProductsPages {
 
     @FindBy(xpath = "(//*[@class='wcfm-checkbox checklist_type_product_cat '])[81]")
     public WebElement newArrivalsCheckBox;
+
+    @FindBy(xpath = "(//*[@type='checkbox'])[75]")
+    public WebElement kirtasiyeChecBox;
+
+
 
     // Pruducst Brands ChechkBox Kutusu için
 

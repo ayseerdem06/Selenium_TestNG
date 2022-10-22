@@ -8,8 +8,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class TC01 {
+public class TC01 extends TestBaseRapor {
 
     @Test
     public void testcase01() throws InterruptedException {

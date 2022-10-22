@@ -48,34 +48,30 @@ public class TC01 {
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  Kullanici Categories sekmesinin oldugunu dogrular
-        WebElement actualCatagories = productsPages.categories;
-        Assert.assertTrue(actualCatagories.isDisplayed());
-        Assert.assertTrue(actualCatagories.getText().contains("Categories*"));
+        Assert.assertTrue(productsPages.categories.isDisplayed());
+        Assert.assertTrue(productsPages.categories.getText().contains("Categories*"));
 
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Besin takviyeleri seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Besin takviyeleri secenegini secer
         Thread.sleep(1000);
-        WebElement actualBesinTakviyeleri = productsPages.besinTakviyeleriText;
-        Assert.assertTrue(actualBesinTakviyeleri.isDisplayed());
-        Assert.assertTrue(actualBesinTakviyeleri.getText().contains("Besin takviyeleri"));
+        Assert.assertTrue(productsPages.besinTakviyeleriText.isDisplayed());
+        Assert.assertTrue(productsPages.besinTakviyeleriText.getText().contains("Besin takviyeleri"));
         productsPages.besinTakviyeleriCheckBox.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Cok satanlar seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Cok satanlar secenegini secer
         Thread.sleep(1000);
-        WebElement actualCokSatanlar = productsPages.cokSatanlarText;
-        Assert.assertTrue(actualCokSatanlar.isDisplayed());
-        Assert.assertTrue(actualCokSatanlar.getText().contains("Cok satanlar"));
+        Assert.assertTrue(productsPages.cokSatanlarText.isDisplayed());
+        Assert.assertTrue(productsPages.cokSatanlarText.getText().contains("Cok satanlar"));
         productsPages.cokSatanlarCheckBox.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Elektrik & Elektronik  seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Elektrik & Elektronik  secenegini secer
         Thread.sleep(1000);
-        WebElement actualElektrikElektronik = productsPages.elektrikElektroniktext;
-        Assert.assertTrue(actualElektrikElektronik.isDisplayed());
-        Assert.assertTrue(actualElektrikElektronik.getText().contains("Elektrik & Elektronik"));
+        Assert.assertTrue(productsPages.elektrikElektroniktext.isDisplayed());
+        Assert.assertTrue(productsPages.elektrikElektroniktext.getText().contains("Elektrik & Elektronik"));
         productsPages.elektrikElektronikCheckBox.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
@@ -83,9 +79,8 @@ public class TC01 {
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Home&Life seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Home&Life  secenegini secer
         Thread.sleep(1000);
-        WebElement actualHomeLife = productsPages.homeLifetext;
-        Assert.assertTrue(actualHomeLife.isDisplayed());
-        Assert.assertTrue(actualHomeLife.getText().contains("Home&Life"));
+        Assert.assertTrue(productsPages.homeLifetext.isDisplayed());
+        Assert.assertTrue(productsPages.homeLifetext.getText().contains("Home&Life"));
         productsPages.homeLifeCheckBox.click();
         actions.sendKeys(Keys.PAGE_UP).sendKeys(Keys.PAGE_UP).perform();
 
@@ -93,36 +88,32 @@ public class TC01 {
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Discounted seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Discounted secenegini secer
         Thread.sleep(1000);
-        WebElement actualDiscounted = productsPages.discountedtext;
-        Assert.assertTrue(actualDiscounted.isDisplayed());
-        Assert.assertTrue(actualDiscounted.getText().contains("Discounted"));
+        Assert.assertTrue(productsPages.discountedtext.isDisplayed());
+        Assert.assertTrue(productsPages.discountedtext.getText().contains("Discounted"));
         productsPages.discountedCheckBox.click();
         actions.sendKeys(Keys.PAGE_UP).perform();
 
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Books & Music & Film seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Books & Music & Film secenegini secer
         Thread.sleep(1000);
-        WebElement actualBooksMusicFilm = productsPages.booksMusicFilmtext;
-        Assert.assertTrue(actualBooksMusicFilm.isDisplayed());
-        Assert.assertTrue(actualBooksMusicFilm.getText().contains("Books & Music & Film"));
+        Assert.assertTrue(productsPages.booksMusicFilmtext.isDisplayed());
+        Assert.assertTrue(productsPages.booksMusicFilmtext.getText().contains("Books & Music & Film"));
         productsPages.booksMusicFilmCheckBox.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Cosmetics&Personal Care  seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Cosmetics&Personal secenegini secer
         Thread.sleep(1000);
-        WebElement actualCosmeticsPersonal = productsPages.cosmeticstext;
-        Assert.assertTrue(actualCosmeticsPersonal.isDisplayed());
-        Assert.assertTrue(actualCosmeticsPersonal.getText().contains("Cosmetics&Personal Care"));
+        Assert.assertTrue(productsPages.cosmeticstext.isDisplayed());
+        Assert.assertTrue(productsPages.cosmeticstext.getText().contains("Cosmetics&Personal Care"));
         productsPages.cosmeticsCheckBox.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Fashion&Clothing seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Fashion&Clothing secenegini secer
         Thread.sleep(1000);
-        WebElement actualFashionClothing = productsPages.fashionClothingtext;
-        Assert.assertTrue(actualFashionClothing.isDisplayed());
-        Assert.assertTrue(actualFashionClothing.getText().contains("Fashion&Clothing"));
+        Assert.assertTrue(productsPages.fashionClothingtext.isDisplayed());
+        Assert.assertTrue(productsPages.fashionClothingtext.getText().contains("Fashion&Clothing"));
         productsPages.fashionClothingCheckBox.click();
         actions.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
 
@@ -130,9 +121,8 @@ public class TC01 {
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Toys & Games seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak Toys & Games secenegini secer
         Thread.sleep(1000);
-        WebElement actualtoysGames = productsPages.toysGamestext;
-        Assert.assertTrue(actualtoysGames.isDisplayed());
-        Assert.assertTrue(actualtoysGames.getText().contains("Toys & Games"));
+        Assert.assertTrue(productsPages.toysGamestext.isDisplayed());
+        Assert.assertTrue(productsPages.toysGamestext.getText().contains("Toys & Games"));
         productsPages.toysGamesCheckBox.click();
         actions.sendKeys(Keys.PAGE_UP).perform();
 
@@ -140,10 +130,8 @@ public class TC01 {
         //  Kullanici Catagries sekmesinden urun katagorisi olarak New Arrivals seceneginin oldugunu dogrular
         //  Kullanici Catagries sekmesinden urun katagorisi olarak New Arrivals  secenegini secer
         Thread.sleep(1000);
-
-        WebElement actualNewArrivals = productsPages.newArrivalstext;
-        Assert.assertTrue(actualNewArrivals.isDisplayed());
-        Assert.assertTrue(actualNewArrivals.getText().contains("New Arrivals"));
+        Assert.assertTrue(productsPages.newArrivalstext.isDisplayed());
+        Assert.assertTrue(productsPages.newArrivalstext.getText().contains("New Arrivals"));
         productsPages.newArrivalsCheckBox.click();
 
 
