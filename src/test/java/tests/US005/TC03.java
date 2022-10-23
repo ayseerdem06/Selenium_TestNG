@@ -10,12 +10,14 @@ import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC03 {
+public class TC03 extends TestBaseRapor {
 
     @Test
     public void testCase03() throws InterruptedException {
 
+        extentTest = extentReports.createTest("yeni urunler yuklenebilmeli","Store Manager olarak product title ve   Price($) , Sale Price ($), Resim,Galery,Catagories ve  Product brands seçeneklere ait alanlar dolduruldugunda    urun eklendigini gormeli");
         ProductsPages productsPages = new ProductsPages();
         Actions actions = new Actions(Driver.getDriver());
 
@@ -30,23 +32,23 @@ public class TC03 {
         productsPages.signInButton.click();
 
         //  Kullanici ana sayfada My Account linkine tiklar
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.END).perform();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         productsPages.myAccount.click();
 
         //  Kullanici acilan sayfada Store Manager linkine  tiklar
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         productsPages.storeManager.click();
 
         //  Kullanici  acilan sayfada Products linkine  tiklar
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         productsPages.products.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
         //  Kullanici Products ekranından Yeni urun ekle (Add new) butonuna tiklar
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         productsPages.addNew.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
 
@@ -74,7 +76,7 @@ public class TC03 {
 
         //   Kullanici  Choose image pencersinden Media Library sekmesine tiklar
         productsPages.mediaLibraryIlk.click();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
 
         //   Kullanici acilan ekranda bulunan resimlerden istedigi resmi secer ve tiklar.
         productsPages.imgClick1.click();
@@ -83,14 +85,14 @@ public class TC03 {
         productsPages.select.click();
 
         //   Kullanici resim eklemek icin Bos Cikan Kucuk  Resim Ekranina  tiklar
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         productsPages.galeryImg.click();
 
         //   Kullanici  Choose image pencersinden Media Library sekmesine tiklar
         productsPages.mediaLibraryIkinci.click();
 
         //   Kullanici acilan pencerede eklemek istedigi resmi secer
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         productsPages.imgClick2.click();
 
         //   Kullanici sectigi resmi eklemek icin Add To Galery butonuna tiklar olusturur
@@ -98,7 +100,7 @@ public class TC03 {
 
         //  Kullanici Categories sekmesinin oldugunu dogrular
         //   Kullanici Catagries sekmesinden herhangi bir katagori secer
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         Assert.assertTrue(productsPages.categories.isDisplayed());
         Assert.assertTrue(productsPages.categories.getText().contains("Categories*"));
         productsPages.bestSellerCheckBox.click();
@@ -109,7 +111,7 @@ public class TC03 {
         Assert.assertTrue(productsPages.pruductBrands.isDisplayed());
         Assert.assertTrue(productsPages.pruductBrands.getText().contains("Product brands"));
         ReusableMethods.jsclick(productsPages.adidasCheckBox);
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
 
 
         //   Kullanici Submit Butonuna  Tiklar
@@ -118,9 +120,10 @@ public class TC03 {
         //   Kullanici "Product Successfully Published."mesajı ile istenilen bilgileri girdiginde Submit  yapabildigini dogrular
         ReusableMethods.waitForVisibility(productsPages.popUpMessageHappy,10);
         Assert.assertTrue(productsPages.popUpMessageHappy.isDisplayed());
+        extentTest.info("Store Manager olarak product title ,  Price($) , Sale Price ($), Resim Galery,Catagories ve  Product brands seçeneklerine ait alanları bos birakildiginda  urun eklenemedigini gorur");
 
         //   Kullanici sayfayi kapatir
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         Driver.closeDriver();
 
     }

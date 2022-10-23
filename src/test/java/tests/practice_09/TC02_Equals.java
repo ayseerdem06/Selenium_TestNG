@@ -1,4 +1,4 @@
-package tests.US007;
+package tests.practice_09;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
 
-public class TC01_Equals {
+public class TC02_Equals {
 
     @Test
     public void testCase01() throws InterruptedException {

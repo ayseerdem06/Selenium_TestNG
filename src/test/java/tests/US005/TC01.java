@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC01 extends TestBaseRapor {
@@ -16,7 +17,7 @@ public class TC01 extends TestBaseRapor {
     @Test
     public void testcase01() throws InterruptedException {
 
-        extentTest = extentReports.createTest("Yeni Urunler yukleyebilmeli","Store Manager olarak, Products a gidip   status, stock, price, date den olusan urun listesini gorebilmeli");
+        extentTest = extentReports.createTest("Urunlere ait basliklari gorebilmeli","Store Manager olarak, Products a gidip   status, stock, price, date den olusan urun listesini gorebilmeli");
         ProductsPages productsPages = new ProductsPages();
         Actions actions = new Actions(Driver.getDriver());
 
@@ -36,9 +37,9 @@ public class TC01 extends TestBaseRapor {
 
         //  Kullanici ana sayfada My Account linkine tiklar
         //  Kullanici My Account'a giris yaptigini dogrular
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.END).perform();
-        Thread.sleep(2000);
+        ReusableMethods.waitFor(2);
         productsPages.myAccount.click();
         WebElement actualAccountText = productsPages.myAccountText;
         Assert.assertTrue(actualAccountText.isDisplayed());
@@ -46,7 +47,7 @@ public class TC01 extends TestBaseRapor {
 
         //  Kullanici acilan sayfada Store Manager linkine  tiklar
         //  Kullanici Store Manager'a giris yaptigini dogrular
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         productsPages.storeManager.click();
         WebElement actualStoreManager = productsPages.storeManagerText;
         Assert.assertTrue(actualStoreManager.isDisplayed());
@@ -54,7 +55,7 @@ public class TC01 extends TestBaseRapor {
         //  Kullanici  acilan sayfada Products linkine  tiklar
         //  Kullanici Products 'a giris yaptigini dogrular
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         productsPages.products.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         WebElement actualProductsText = productsPages.productsText;
@@ -62,7 +63,7 @@ public class TC01 extends TestBaseRapor {
 
         //  Kullanici Prpducts sayfasinda urun listesinin yer aldigi tabloda
         //  status, stok, price ve date baslıklarının oldugunu dogrular
-        Thread.sleep(1000);
+        ReusableMethods.waitFor(1);
         WebElement actualStatus = productsPages.status;
         Assert.assertTrue(actualStatus.isDisplayed());
 
@@ -77,7 +78,7 @@ public class TC01 extends TestBaseRapor {
         extentTest.info("Store Manager olarak Products  menusunden   status, stock, price, date den olusan urun listesine ait basliklarin oldugunu gorur");
 
         //  Kullanici sayfayi kapatir
-        Thread.sleep(3000);
+        ReusableMethods.waitFor(3);
         Driver.closeDriver();
 
     }

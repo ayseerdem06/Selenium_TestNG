@@ -9,13 +9,15 @@ import org.testng.annotations.Test;
 import pages.ProductsPages;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class TC04 {
+public class TC04 extends TestBaseRapor {
 
 
     @Test
     public void testCase04() throws InterruptedException {
 
+        extentTest = extentReports.createTest(" Price($) , Sale Price ($),Product brands seçeneklerine ait alanları bos birakildiginda  urun ekleme islemi yapilamamali ","Store Manager olarak product title ,  Price($) , Sale Price ($), Resim Galery,Catagories ve  Product brands seçeneklerine ait alanları bos birakildiginda urun eklenemedigini gormeli");
         ProductsPages productsPages = new ProductsPages();
         Actions actions = new Actions(Driver.getDriver());
 
@@ -68,6 +70,7 @@ public class TC04 {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),8);
         wait.until(ExpectedConditions.visibilityOf(productsPages.popUpMessageNegative));
         Assert.assertTrue(productsPages.popUpMessageNegative.isDisplayed());
+        extentTest.info("Store Manager olarak product title ve   Price($) , Sale Price ($), Resim ,Galery,Catagories ve  Product brands seçeneklere ait alanlar dolduruldugunda  urun eklendigini gorur");
 
         //  Kullanici sayfayi kapatir
 
