@@ -12,6 +12,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
+import java.time.Duration;
+
 public class TC03 extends TestBaseRapor {
 
     @Test
@@ -118,7 +120,8 @@ public class TC03 extends TestBaseRapor {
         ReusableMethods.jsclick(productsPages.submit);
 
         //   Kullanici "Product Successfully Published."mesajı ile istenilen bilgileri girdiginde Submit  yapabildigini dogrular
-        ReusableMethods.waitForVisibility(productsPages.popUpMessageHappy,10);
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOf(productsPages.popUpMessageHappy));
         Assert.assertTrue(productsPages.popUpMessageHappy.isDisplayed());
         extentTest.info("Store Manager olarak product title ,  Price($) , Sale Price ($), Resim Galery,Catagories ve  Product brands seçeneklerine ait alanları bos birakildiginda  urun eklenemedigini gorur");
 
