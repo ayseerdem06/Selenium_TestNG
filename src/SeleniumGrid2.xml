@@ -4,6 +4,7 @@
         <classes>
             <class name="tests.SeleniumGrid1"></class>
             <class name="tests.SeleniumGrid2"></class>
+            <class name="tests.SeleniumGrid3"></class>
         </classes>
     </test>
 </suite>
